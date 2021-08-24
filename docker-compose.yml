@@ -1,0 +1,36 @@
+# How to use :
+# username=admin password=password uid=1000 gid=1000 docker-compose up -d
+# docker-compose down
+# --------------------------------------------------------------------------------
+
+version: "3.5"
+services:
+  jellyfin:
+    image: jellyfin/jellyfin:20210823.8-unstable
+    container_name: jellyfin
+    user: ${uid}:${gid}
+    volumes:
+      - ./jellyfin/config:/config
+      - ./jellyfin/cache:/cache
+      - ./jellyfin/media_wr:/media
+      # [ro] meams [read only]
+      - ./jellyfin/media_r:/media_r:ro
+    ports:
+      - 8096:8096
+    # Optional - alternative address used for autodiscovery
+    environment:
+      - JELLYFIN_PublishedServerUrl=http://127.0.0.1
+    networks: 
+      vpn:
+        ipv4_address: 172.168.40.2
+    restart: on-failure
+
+
+networks:
+  vpn:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet:  172.168.40.0/24
+          gateway: 172.168.40.1
