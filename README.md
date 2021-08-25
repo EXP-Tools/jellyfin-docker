@@ -6,7 +6,7 @@
 
 ## 概要
 
-一个非常 Cool 的媒体播放器，支持在线观看电影、音乐、书籍、TV、MV 等多种格式，支持内网穿透，支持电视投屏！
+一个非常 Cool 的媒体播放器，支持在线观看电影、音乐、图片、书籍、TV、MV 等多种格式，支持内网穿透，支持电视投屏！
 
 当然它和 [mstream](https://github.com/lyy289065406/mstream-docker) 和 [calibre](https://github.com/lyy289065406/calibre-docker) 这类专精于音乐库或书库的软件相比，功能要简单得多，但胜在易用，可以满足大部分人的基本需求。
 

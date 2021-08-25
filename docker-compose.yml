@@ -15,6 +15,7 @@ services:
       - ./jellyfin/media/film:/media/film
       - ./jellyfin/media/music:/media/mucic
       - ./jellyfin/media/book:/media/book
+      - ./jellyfin/media/photo:/media/photo
       - ./jellyfin/media/tv:/media/tv
       - ./jellyfin/media/mv:/media/mv
       # [ro] meams [read only]
