@@ -12,9 +12,13 @@ services:
     volumes:
       - ./jellyfin/config:/config
       - ./jellyfin/cache:/cache
-      - ./jellyfin/media_wr:/media
+      - ./jellyfin/media/film:/media/film
+      - ./jellyfin/media/music:/media/mucic
+      - ./jellyfin/media/book:/media/book
+      - ./jellyfin/media/tv:/media/tv
+      - ./jellyfin/media/mv:/media/mv
       # [ro] meams [read only]
-      - ./jellyfin/media_r:/media_r:ro
+      - ./jellyfin/media/other:/media/other:ro
     ports:
       - 8096:8096
     # Optional - alternative address used for autodiscovery
