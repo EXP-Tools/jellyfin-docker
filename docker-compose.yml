@@ -3,7 +3,7 @@
 # docker-compose down
 # --------------------------------------------------------------------------------
 
-version: "3.5"
+version: "2.1"
 services:
   jellyfin:
     image: jellyfin/jellyfin:20210823.8-unstable
@@ -22,7 +22,7 @@ services:
       - JELLYFIN_PublishedServerUrl=http://127.0.0.1
     networks: 
       vpn:
-        ipv4_address: 172.168.40.2
+        ipv4_address: 172.168.41.2
     restart: on-failure
 
 
@@ -32,5 +32,5 @@ networks:
     ipam:
       driver: default
       config:
-        - subnet:  172.168.40.0/24
-          gateway: 172.168.40.1
+        - subnet:  172.168.41.0/24
+          gateway: 172.168.41.1
